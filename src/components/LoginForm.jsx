@@ -7,7 +7,7 @@ const LoginForm = () => {
         username: "",
         password: ""
     })
-
+    const backgroundVideoUrl =  "/video/bg-video.mp4"; 
     const handleInputChange = (e)=>{
         const { name, value } = e.target;
         setUser((prevUser) => ({
@@ -26,6 +26,14 @@ const LoginForm = () => {
     }
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 px-4">
+             <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="absolute top-0 left-0 w-full h-full object-cover z-0"
+                      src={backgroundVideoUrl}
+                  />
             <div className="bg-white/10 backdrop-blur-md rounded-xl shadow-lg w-full max-w-md px-6 sm:px-8 py-6 text-white text-center border border-white/20">
                 <h1 className="text-2xl sm:text-3xl font-extrabold text-indigo-200 mb-2">Login Here</h1>
                 <form onSubmit={handleFormSubmit} className="flex flex-col gap-3 mt-4 text-start">
